@@ -27,11 +27,11 @@ The playbook is *not* intended for
 
 ## How to Use This Playbook
 
-If you are new to this topic, go to [**Defining Responsible Agentic AI**](#_Defining_Responsible_Agentic)**.** This is also a useful introduction to the later sections.
+If you are new to this topic, go to [**Defining Responsible Agentic AI**](#defining-responsible-agentic-ai)**.** This is also a useful introduction to the later sections.
 
-If you are building an agentic tool, go to [**our practical guide to internal-facing agents**](#_Practical_Guide_to) or our [**practical guide to external-facing agents**](#_Practical_Guide_to_1).
+If you are building an agentic tool, go to [**our practical guide to internal-facing agents**](#practical-guide-to-internal-facing-agents) or our [**practical guide to external-facing agents**](#practical-guide-to-external-facing-agents).
 
-If you are overseeing a team building an agentic tool, go to [**Governing Agentic AI**](#_Governing_Responsible_AI).
+If you are overseeing a team building an agentic tool, go to [**Governing Agentic AI**](#governing-agentic-ai).
 
 Keep in mind that the processes and recommendations in this playbook are goals to strive for. In many cases, fully meeting all goals may not be practical or feasible, particularly for early-stage projects or smaller teams. In those cases, builders should prioritize the elements most relevant to their AI agent's risk profile, document what they are and are not able to address and why, and develop a plan to close gaps as the agent matures.
 
@@ -156,7 +156,7 @@ Evaluation and monitoring must produce both internal and public documents enabli
 
 High-stakes deployments should produce evidence that allow independent reviewers (internal and external) to assess what was tested, what failed, what was fixed, and what remains uncertain. This evidence should include the following:
 
-* **Evaluation plan and success thresholds:** The purpose, context, outcome measures, evidence tier and target population as detailed in [**principle 1**](#_Principle_1:_Define).
+* **Evaluation plan and success thresholds:** The purpose, context, outcome measures, evidence tier and target population as detailed in [**principle 1**](#principle-1-define-a-clear-purpose-and-measure-success).
 * **Rubrics and scoring guidance, versioned:** The prompts or scenarios used to evaluate the agentic AI system, along with how evaluators judge correctness, groundedness, completeness, explainability and clarity, fairness across groups, and reliability under variation.
 * **Regular testing:** Evaluation activities required under principle 1 are repeatable processes that are run regularly and can detect any major changes from the initial testing. Testing and rubrics are updated as necessary. In addition, these tests are run before every meaningful change (i.e., prompts, tools, data sources, models).
 * **Red team findings:** Vulnerabilities discovered and their severity.
@@ -174,9 +174,9 @@ When an AI tool supports decisions about individuals, builders should include me
 
 The following practical guides are intended to help organizations determine what they should do before, during, and after deploying an AI agent. The guides outline the documentation, approvals, testing, and monitoring recommended at different phases of an agent’s life cycle.
 
-The [**practical guide to internal-facing agents**](#_Practical_Guide_to)is intended for AI agents used only within an organization. This guide allows for more risk and fast approvals. It documents two phases of development: the pilot and the internal launch. Practitioners looking for stronger requirements and governance for their internal processes should consider adopting elements of the practical guide to external-facing agents.
+The [**practical guide to internal-facing agents**](#practical-guide-to-internal-facing-agents)is intended for AI agents used only within an organization. This guide allows for more risk and fast approvals. It documents two phases of development: the pilot and the internal launch. Practitioners looking for stronger requirements and governance for their internal processes should consider adopting elements of the practical guide to external-facing agents.
 
-The [**practical guide to external-facing agents**](#_Practical_Guide_to_1)is intended for AI agents used by the public. This guide takes a more conservative approach to risk and requires a more thorough review process. It documents four phases of development: the internal users pilot, the external users pilot, the external launch, and the continuous improvement to best practices.
+The [**practical guide to external-facing agents**](#practical-guide-to-external-facing-agents)is intended for AI agents used by the public. This guide takes a more conservative approach to risk and requires a more thorough review process. It documents four phases of development: the internal users pilot, the external users pilot, the external launch, and the continuous improvement to best practices.
 
 # Practical Guide to Internal-Facing AI Agents
 
