@@ -194,21 +194,21 @@ This phase, meant to last no more than six months, tests the agent with 10 or fe
 
 Builders should submit the completed pre–phase 1 checklist to the **responsible** agentic AI lead or a centralized approval body for approval and ensure the agent is only available for use by the specified users.
 
-**Download the pre–phase 1 checklist.**
+**[Download](/PDF%20Forms/Pre-phase-1-requirements.pdf) the pre–phase 1 checklist.**
 
 Builder or evaluators should use the phase 1 checklist to document the AI tool’s performance along several dimensions. Organizations should at a minimum enforce the submission of these statistics before approving phase 2.
 
-**Download the phase 1 checklist.**
+**[Download](/PDF%20Forms/Phase-1-requirements.pdf) the phase 1 checklist.**
 
 ## Phase 2: Internal Launch
 
 This phase expands the tool to all **non-expert** internal users. Such broader availability brings significant additional risk. Builders or evaluators should submit the pre–phase 2 launch checklist to the responsible agentic AI lead, and a centralized approval body should consider the checklist for expedited approval, before the AI agent is launched organization-wide.
 
-**Download the pre–phase 2 checklist.**
+**[Download](/PDF%20Forms/Pre-phase-2-requirements-internal-launch.pdf) the pre–phase 2 checklist.**
 
 The accountable owner should ensure that the statistics in the production checklist are measured and reported on to users of the tool at least once a year.
 
-**Download the phase 2 checklist.**
+**[Download](/PDF%20Forms/Phase-2-requirements-production.pdf) the phase 2 checklist.**
 
 # Practical Guide to External-Facing AI Agents
 
@@ -224,33 +224,33 @@ This phase, meant to last no more than six months, tests the agent with 10 or fe
 
 Builders should submit the completed pre–phase 1 checklist to the **responsible** agentic AI lead or a centralized approval body for approval and ensure the agent is only available for use by the specified users.
 
-**Download the pre–phase 1 checklist.**
+**[Download](/PDF%20Forms/Pre-phase-1-requirements.pdf) the pre–phase 1 checklist.**
 
 Builders or evaluators should use the phase 1 checklist to document the AI tool’s performance along several dimensions. Organizations should at a minimum enforce the submission of these statistics before approving phase 2.
 
-**Download the phase 1 checklist.**
+**[Download](/PDF%20Forms/Phase-1-requirements.pdf) the phase 1 checklist.**
 
 ## Phase 2: Non-Expert External Users Pilot
 
 This phase, also meant to last no more than six months, expands testing to a limited number of external users. Such broader testing brings additional risk. Builders or evaluators should submit the pre–phase 2 checklist to the responsible agentic AI lead, and a centralized approval body should consider it for expedited approval, before external users are provided access to the AI tool.
 
-**Download the pre–phase 2 checklist.**
+**[Download](/PDF%20Forms/Pre-phase-2-requirements-external-users-pilot.pdf) the pre–phase 2 checklist.**
 
 Builders or evaluators should use the phase 2 checklist to document the AI tool’s performance along several dimensions.
 
-**Download the phase 2 checklist.**
+**[Download](/PDF%20Forms/Phase-2-requirements-external-users-pilot.pdf) the phase 2 checklist.**
 
 ## Phase 3: Minimum Viable Release: External Launch
 
 Builders or evaluators should complete the phase 3 checklist before launching a full version of the agent to a broad external audience. They should then submit checklists for all three phases to the responsible agentic AI lead and a centralized approval body for full review and approval.
 
-**Download the phase 3 checklist.**
+**[Download](/PDF%20Forms/Phase-3-requirements.pdf) the phase 3 checklist.**
 
 ## Phase 4: Long-Term Goals: Continuous Improvement to Best Practices
 
 The phase 4 checklist represents additional elements to move agentic AI tools to the ideal state over time. Organizations may wish to use the content from this section to modify the phase 2 or 3 checklists in order to mitigate organization-specific risks.
 
-**Download the phase 4 checklist.**
+**[Download](/PDF%20Forms/Phase-4-suggestions.pdf) the phase 4 checklist.**
 
 # Governing Responsible AI
 
