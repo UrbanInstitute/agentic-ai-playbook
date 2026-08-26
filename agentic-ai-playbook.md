@@ -72,7 +72,7 @@ For agentic AI, “quality” must be defined more broadly to include completene
 
 Fairness across groups means that the AI agent performs consistently across different user profiles, backgrounds, or personal characteristics. Fairness metrics are necessary (but insufficient) steps to considering discrimination that occurs systemically in institutions that interact with AI. Builders should carefully consider the correct metrics for measuring fairness and evaluate the meaning of each metric based on an expert judgment of risk, potential harms, and user feedback.
 
-Generally, we recommend that builders create a small set of structured scenarios based on the AI agent’s purpose and intended use. They should choose relevant subgroups from the agent’s target population, based on the potential for plausible harm. Evaluators should measure how decisions and outcomes affected by the AI agent differ by subgroup and ask members of each subgroup to test the AI agent to collect differences in responses. They should then measure the decision gap,outcome gap, and bias gap.
+Generally, we recommend that builders create a small set of structured scenarios based on the AI agent’s purpose and intended use. They should choose relevant subgroups from the agent’s target population, based on the potential for plausible harm. Evaluators should measure how decisions and outcomes affected by the AI agent differ by subgroup and ask members of each subgroup to test the AI agent to collect differences in responses. They should then measure the decision gap, outcome gap, and bias gap.
 
 ## A High Standard of Evidence
 
@@ -126,7 +126,7 @@ A [popular proposed agentic security framework](https://simonwillison.net/2025/N
 2. An agent has access to sensitive systems and/or data.
 3. An agent can change state in internal systems or communicate externally to exfiltrate information.
 
-High-stakes agentic systems should demonstrate baseline resilience to these risks, as determined by a cybersecurity expert, before AI agent deployment and during periodic reassessment on a schedule similar to other cybersecurity best practices by testing for prompt injection resistance (both direct and indirect), sensitive information disclosure, unauthorized actions or excessive agency, knowledge-source poisoning, andindirect injection.
+High-stakes agentic systems should demonstrate baseline resilience to these risks, as determined by a cybersecurity expert, before AI agent deployment and during periodic reassessment on a schedule similar to other cybersecurity best practices by testing for prompt injection resistance (both direct and indirect), sensitive information disclosure, unauthorized actions or excessive agency, knowledge-source poisoning, and indirect injection.
 
 ## Harness Requirements and Minimum Necessary Autonomy
 
@@ -174,9 +174,9 @@ When an AI tool supports decisions about individuals, builders should include me
 
 The following practical guides are intended to help organizations determine what they should do before, during, and after deploying an AI agent. The guides outline the documentation, approvals, testing, and monitoring recommended at different phases of an agent’s life cycle.
 
-The [**practical guide to internal-facing agents**](#practical-guide-to-internal-facing-agents)is intended for AI agents used only within an organization. This guide allows for more risk and fast approvals. It documents two phases of development: the pilot and the internal launch. Practitioners looking for stronger requirements and governance for their internal processes should consider adopting elements of the practical guide to external-facing agents.
+The [**practical guide to internal-facing agents**](#practical-guide-to-internal-facing-agents) is intended for AI agents used only within an organization. This guide allows for more risk and fast approvals. It documents two phases of development: the pilot and the internal launch. Practitioners looking for stronger requirements and governance for their internal processes should consider adopting elements of the practical guide to external-facing agents.
 
-The [**practical guide to external-facing agents**](#practical-guide-to-external-facing-agents)is intended for AI agents used by the public. This guide takes a more conservative approach to risk and requires a more thorough review process. It documents four phases of development: the internal users pilot, the external users pilot, the external launch, and the continuous improvement to best practices.
+The [**practical guide to external-facing agents**](#practical-guide-to-external-facing-agents) is intended for AI agents used by the public. This guide takes a more conservative approach to risk and requires a more thorough review process. It documents four phases of development: the internal users pilot, the external users pilot, the external launch, and the continuous improvement to best practices.
 
 # Practical Guide to Internal-Facing AI Agents
 
@@ -330,7 +330,7 @@ This section helps you learn more about the components of effective agentic AI p
 
 **Bias gap:** The extent to which subgroup members report that an AI agent perpetuates any stereotypes or prejudices based on their identity—for example, whether users from one subgroup report that the agent’s language, tone, or assumptions feel more stigmatizing, judgmental, or stereotype-reinforcing than other users do.
 
-**Builder:** AnIT specialistwho creates a new agentic generative AI tool or a new application of an existing tool to resolve a specific business or policy problem.
+**Builder:** An IT specialist who creates a new agentic generative AI tool or a new application of an existing tool to resolve a specific business or policy problem.
 
 **Change proposal:** A structured request to add, revise, or retire an agentic tool component (e.g., rubric criteria, test set, documentation template, required approval).
 
@@ -354,13 +354,13 @@ This section helps you learn more about the components of effective agentic AI p
 
 *Tier 4—Design evidence:* System owners have a documented and well-defined logic model or theory of action with clearly defined assumptions.
 
-**Explainability and clarity:** How well an AIagent provides evidence for its output that is clear, well-formatted, and actionable; accurately reflects the system’s process for generating the answer; and clearly communicates the agent’s knowledge limits.
+**Explainability and clarity:** How well an AI agent provides evidence for its output that is clear, well-formatted, and actionable; accurately reflects the system’s process for generating the answer; and clearly communicates the agent’s knowledge limits.
 
-**Generative AI (Gen AI) committee:** Across-functional forum that decides on high-impact changes to an agentic AI tool and resolves tradeoffs; it advises the accountable owner.
+**Generative AI (Gen AI) committee:** A cross-functional forum that decides on high-impact changes to an agentic AI tool and resolves tradeoffs; it advises the accountable owner.
 
 **Governance:** The rules, roles, and decisionmaking processes that determine who can propose, review, approve, and publish changes to an AI agent or tool.
 
-**Groundedness:** How well an AI agent’sresponse is supported by the allowed sources or context, cites sources, and does not invent unsupported claims.
+**Groundedness:** How well an AI agent’s response is supported by the allowed sources or context, cites sources, and does not invent unsupported claims.
 
 **Independent reviewer:** A person who is neither a contributor nor part of the AI governance structure and is asked to assess high-impact updates to an AI agent (e.g., peer reviewer, auditor, or designated subject-matter expert).
 
