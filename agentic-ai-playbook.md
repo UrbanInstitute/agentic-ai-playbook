@@ -1,6 +1,6 @@
 Responsible Agentic AI Playbook
 
-## A Practical Guide for State and Local Government Agencies
+## A Practical Guide for Nonprofits and Government Agencies
 
 # Home
 
@@ -16,7 +16,7 @@ This playbook is aimed at **agentic generative AI** application **builders** who
 
 The principles and processes in the playbook could help
 
-* a state or local agency build a public-facing AI chatbot to help constituents apply for benefits;
+* a nonprofit or government agency build a public-facing AI chatbot to help constituents apply for benefits;
 * a programmer use agentic programming tools (like Claude Code or GitHub Copilot) to create new AI agents and subagents for non-experts to use; or
 * a programmer or expert assemble existing third-party agents, connectors, skills, or tools into a new workflow for non-experts.
 
@@ -25,9 +25,21 @@ The playbook is *not* intended for
 * an organization purchasing an enterprise generative AI tool (like Claude or ChatGPT’s web interface) for all staff to use; or
 * a programmer or programming team using agentic programming tools (like Claude Code or GitHub Copilot) alongside agents, connectors, skills, or other tools built for their own use rather than for non-experts.
 
+## Distinguishing Experts from Non-Experts
+
+This playbook defines non-experts as “users who lack the subject matter expertise necessary to review and determine the correctness, reliability, groundedness, and completeness of a generative AI tool or application’s output within the normal time constraints of their work.” What does that mean in practice?
+
+Expertise exists on a spectrum. In our work, three characteristics of an AI agent typically help us distinguish an expert from a non-expert:
+
+* **Task length:** the number of distinct steps in an agentic process;
+* **Task complexity:** the level of specialized knowledge required to complete the task; and
+* **Task variety:** the number of distinct tasks that require different expertise to complete.
+
+Generally speaking, as the task the agent completes becomes more complex, it becomes less likely that a single expert can verify the output of the agent, and it becomes more likely that you’ll need to use this guide to govern the agent’s implementation.
+
 ## How to Use This Playbook
 
-If you are new to this topic, go to [**Defining Responsible Agentic AI**](#defining-responsible-agentic-ai)**.** This is also a useful introduction to the later sections.
+If you are new to this topic, go to [**Defining Agentic AI**](#defining-agentic-ai)**.** This is also a useful introduction to the later sections.
 
 If you are building an agentic tool, go to [**our practical guide to internal-facing agents**](#practical-guide-to-internal-facing-ai-agents) or our [**practical guide to external-facing agents**](#practical-guide-to-external-facing-ai-agents).
 
@@ -35,9 +47,24 @@ If you are overseeing a team building an agentic tool, go to [**Governing Agenti
 
 Keep in mind that the processes and recommendations in this playbook are goals to strive for. In many cases, fully meeting all goals may not be practical or feasible, particularly for early-stage projects or smaller teams. In those cases, builders should prioritize the elements most relevant to their AI agent's risk profile, document what they are and are not able to address and why, and develop a plan to close gaps as the agent matures.
 
-The playbook is a living document. We will be updating it with lessons from Urban’s implementation of agentic AI tools and internal and external feedback. We hope it helps organizations like Urban learn as they grow.
+The playbook is a living document. First published in August 2026, it was most recently revised in November 2026. We will continue to update the playbook with lessons from Urban’s implementation of agentic AI tools and internal and external feedback. We hope it helps organizations like Urban learn as they grow.  
+Looking for a full version of the playbook that you or your AI agent can use to quickly find the content you need? Visit our [GitHub repository for this work](https://github.com/UrbanInstitute/agentic-ai-playbook/blob/main/agentic-ai-playbook.md).
 
-# Defining Responsible Agentic AI
+## How to Use Agentic AI Responsibly with Limited Resources
+
+After reading the first version of this playbook, many organizations with limited budgets—either generally or dedicated to generative AI—told us that the governance burden presented may be too high and wondered where to begin. The answer comes in a few parts.
+
+This revised opening is the first part of the answer. We believe building agents for experts, and ensuring they are only used by experts, is an excellent way to take advantage of generative AI’s capabilities without having to follow the advice in this playbook. In our work, we have observed a large number of useful tools that can make expert teams and their processes faster and more efficient before an organization may need to tackle tools built for non-experts.
+
+The stages and checklists provided in the playbook provide the second part of the answer. The playbook is intentionally phased to allow builders to move forward quickly under minimal governance and prove whether an agent works before introducing any additional governance burden. And for nonprofit and government staff worried about the impacts and security of generative AI, the playbook provides checklists to help them evaluate whether to release an agent.
+
+However, we recognize that some non-expert use cases are so valuable that an organization feels that it must invest in a generative AI agent without being able to follow all the steps in even the simplified governance checklists. To that end, we provide additional comments in relevant sections indicating where lower-resourced organizations may be able to reduce the suggested governance burden.
+
+In addition, this guide can be useful for organizations, particularly lower-resourced organizations, purchasing agentic AI systems built by external vendors. For example, asking vendors to share the tool’s primary outcomes, success metrics, information on how they measured those metrics, and specific cybersecurity mitigations against the “lethal trifecta”—and passing along that information to users—can be tremendously valuable.
+
+Finally, many organizations are available to help support and extend the capacity of government and nonprofit organizations. The Urban Institute, along with local universities and other nonprofit organizations, can bring the measurement, technical, subject matter, technical assistance, and community engagement expertise necessary to make a high-stakes AI agent built for non-experts a success.
+
+# Defining Agentic AI
 
 Building agentic AI for broad use by **non-experts** in policy and research expands risk beyond text generation: it introduces the possibility of errors in tool use, workflow execution, quality control, and decision automation, among others.
 
@@ -66,7 +93,8 @@ Builders should clearly document in as much detail as possible the target popula
 
 ## Quality Beyond Accuracy
 
-For agentic AI, “quality” must be defined more broadly to include completeness, correctness, explainability and clarity, groundedness, and reliability under variation. AI builders and evaluators should use some form of human evaluation to assess each of these dimensions. Additional automated and LLM-as-judge techniques should be used only to amplify, validate, and scale these approaches.
+For agentic AI, “quality” must be defined more broadly to include completeness, correctness, explainability and clarity, groundedness, and reliability under variation. Builders and evaluators should use some form of human evaluation to assess each of these dimensions. Additional automated and LLM-as-judge techniques should be used only to amplify, validate, and scale these approaches. In addition, builders should consider whether any domain- or workflow-specific measures are necessary.  
+Process quality may also be important. Builders creating complex agentic systems should consider outputs as well as important aspects of the process used to produce them, especially in heavily governed or regulated contexts. Depending on the use case, builders may wish to assess whether the agent selected appropriate tools, followed critical workflow steps, recovered appropriately from failures, avoided unnecessary actions, and operated within acceptable cost and latency constraints.
 
 ## Fairness Across Groups
 
@@ -92,7 +120,13 @@ Higher agency on behalf of the agent and higher-stakes outcomes, even within the
 
 Part of collecting qualitative evidence is to continuously solicit stakeholder feedback from the target population throughout agent development and implementation. System owners should solicit feedback from a range of users with different backgrounds or relevant experiences, incorporate or accept the risks of not incorporating that feedback, document these decisions, and share the decisions with the user community.
 
-# Principle 2: Provide Oversight and Ownership
+## Tips for Organizations with Limited Resources
+
+High-stakes agents built for non-experts must have a clear purpose and measure success. Organizations such as local universities, consultants, or nonprofits like the Urban Institute are available as partners to lower-resourced organizations to help them achieve their goals.
+
+When partnership is not possible and the number or quality of outcome measures must be reduced from the list provided above, we believe that transparency—in the purpose of the tool and the outcomes measured—is the most important principle to follow. Providing the results of those outcome measures along with how the tests were performed and any other qualitative observations from the reviewers will increase the user base’s trust in the tool and their ability to evaluate when and how they can both use the tool and trust the answer that comes from it.
+
+# Principle 2: Provide Agent Oversight and Ownership
 
 Organizations implementing responsible agentic AI must institute life-cycle governance: assigning clear human accountability and responsibility as well as mapping risks, measuring them, and managing them throughout design, development, deployment, and monitoring.
 
@@ -100,7 +134,7 @@ Organizations implementing responsible agentic AI must institute life-cycle gove
 
 Builders of responsible high-stakes agentic AI must implement clear ownership and decisionmaking pathways before any deployment. We recommend that every team include five roles: an accountable owner, an evaluation lead, a security lead, a transparency lead, and a responsible agentic AI lead.
 
-In smaller or pilot deployments, the accountable owner may wear several or all of these hats. But for high-stakes policy and research use, these roles should ideally be held by separate individuals. In some cases, each role may involve multiple individuals with the expertise indicated.
+In lower-resourced organizations or pilot deployments, the accountable owner may wear several or all of these hats. But for high-stakes policy and research use, these roles should be held by separate individuals, if possible. In some cases, each role may involve multiple individuals with the expertise indicated. In addition, accountable owners should be governed by an existing or new standards body, where possible, to ensure the organization provides appropriate accountability and governance support. See the Governing Agentic AI section for more detail.
 
 ## Staged Rollout with Clear Processes
 
@@ -114,6 +148,19 @@ Building and architecting agentic AI processes should follow best practices in t
 
 This process should ensure that accountable owners are truly accountable to the requirements in this playbook.
 
+## Involving Different Perspectives to Help Make Key Approval Decisions
+
+The agentic AI process lead should consider involving internal technology, finance, legal, risk, and other relevant parties, as well as key clients and community groups outside the organization, when constructing and implementing the approvals of agentic tools.
+
+Here are two recommended tactics for doing so, built on Urban Institute’s previous experience in community-engaged methods.
+
+For one, the agentic AI process lead could ensure the approval process includes some form of input, feedback, or oversight by community members. A few members of a potentially impacted community or user group, or a full-fledged community advisory board, could review workplans flagging opportunities and risks, shape evaluation questions, review outputs, or reflect on project results and next steps. Some specific components for involving community members could include
+
+* incorporating the community perspective on risks and benefits during the approval process, or
+* having the community approve individual generative AI agents at each key stage.
+
+As an alternative approach to designing the approval process with community representatives, the agentic AI process lead could host a [data walk](https://www.urban.org/research/publication/data-walks-innovative-way-share-data-communities) of the review process when setting up the program. For example, if approvals can be bundled together or are potentially particularly high stakes, or if the lead is kicking off an initial slate of AI agents, a data walk can help community members review each agent and provide feedback. However, data walks are useful at any point—from start to finish—and are a great way to get various stakeholders or people with different areas of expertise to speak and brainstorm with each other.
+
 # Principle 3: Minimize Known Risks
 
 Because an agentic AI tool can take actions, errors can have amplified impact. Beyond cybersecurity basics, which we do not list here, system owners must test for common agentic generative AI vulnerabilities and attack patterns.
@@ -126,11 +173,12 @@ A [popular proposed agentic security framework](https://simonwillison.net/2025/N
 2. An agent has access to sensitive systems and/or data.
 3. An agent can change state in internal systems or communicate externally to exfiltrate information.
 
-High-stakes agentic systems should demonstrate baseline resilience to these risks, as determined by a cybersecurity expert, before AI agent deployment and during periodic reassessment on a schedule similar to other cybersecurity best practices by testing for prompt injection resistance (both direct and indirect), sensitive information disclosure, unauthorized actions or excessive agency, knowledge-source poisoning, and indirect injection.
+High-stakes agentic systems should demonstrate baseline resilience to these risks, as determined by a cybersecurity expert, before AI agent deployment and during periodic reassessment on a schedule similar to other cybersecurity best practices by testing for prompt injection resistance (both direct and indirect), sensitive information disclosure, unauthorized actions or excessive agency, knowledge-source poisoning, and indirect injection.  
+Lower-resourced organizations would ideally follow, or contract support to follow, all the recommended steps in this section. If resources do not allow, these organizations should focus on mitigating or eliminating the risks presented by each part of the lethal trifecta as much as possible. Even mitigating or eliminating one element in this framework can significantly reduce the risk of a negative outcome.
 
 ## Harness Requirements and Minimum Necessary Autonomy
 
-All AI agents exist within a proper runtime environment (sometimes called a “harness”) vetted by security experts, similar to many internal organization applications. The environment may be a virtual machine, container, or other self-contained environment that should perform the following standard cybersecurity actions:
+All AI agents exist within a proper runtime environment (sometimes called a “harness”) vetted by security experts, similar to many internal organization applications. The environment may be a virtual machine, container, or other environment that should perform the following standard cybersecurity actions:
 
 * **Policy enforcement:** Enforce predetermined allow-and-deny rules for potentially risky actions independent of the agent.
 * **System alerts and circuit breakers:** Report anomalous activity to the security lead and, if appropriate, immediately halt execution of the action.
@@ -206,7 +254,7 @@ This phase expands the tool to all **non-expert** internal users. Such broader a
 
 **[Download](PDF%20Forms/Pre-phase-2-requirements-internal-launch.pdf) the pre–phase 2 checklist.**
 
-The accountable owner should ensure that the statistics in the production checklist are measured and reported on to users of the tool at least once a year.
+The accountable owner should ensure that the statistics in the in-production checklist are measured and reported on to users of the tool at least once a year.
 
 **[Download](PDF%20Forms/Phase-2-requirements-production.pdf) the phase 2 checklist.**
 
@@ -254,70 +302,21 @@ The phase 4 checklist represents additional elements to move agentic AI tools to
 
 # Governing Responsible AI
 
-This section defines how Urban governs our responsible agentic AI framework documents and playbook as the technology evolves and we learn from the field. We will use this governance process to inform regular updates to our approach to agentic AI based on what we learn from our external work with clients and our internal adoption of AI tools. We hope our process can serve as a guide for organizations who wish to adapt this framework within their own internal governance structures.
+This section defines how Urban currently governs our AI agent releases as the technology evolves and we learn from the field. We are using this governance process to inform regular updates to our approach to agentic AI based on what we learn from our external work with clients and our internal adoption of AI tools. We hope our process can serve as a guide for organizations that wish to adapt this playbook within their own internal governance structures.
 
-This section clarifies who owns the framework and playbook, how staff suggest and approve changes, how contributions are reviewed and released, and how the framework and playbook are maintained as “living” evaluation and assurance assets.
+We recommend that someone with leadership authority, such as a member of an organization’s executive team, leads the adaptation and adoption of the playbook along with the governance of that playbook. The leader of the technology team should be involved in any such decisionmaking body.
 
-# Governance Approach
+Some organizations may already have a governance, emerging technology, or risk body. Others may have a particular leader—the chief operating officer, chief information officer, head of programs, or a similar position—who oversees the organization’s technology governance or risk management functions. At Urban, the chief information officer and vice president of technology and data science is the ultimate accountable owner for the playbook and ensuring the playbook’s principles are implemented and key actors are held accountable to the process and governance steps outlined.
 
-The recommended operating model combines (a) a management-system backbone that supports continual improvement (Plan–Do–Check–Act), commonly used in mature governance programs (e.g., data/IT governance); and (b) an open, transparent contribution workflow inspired by well-run open-source projects (clear roles, predictable decision paths, and versioning discipline).
+However an organization adapts or adopts this playbook, we recommend that it trains pilot builders and sets up a system that enshrines governance flexibly at each step. As part of Urban’s agentic AI pilot, for example, all pilot members were trained in the playbook and provided links and instructions to Airtable versions of the checklists. Those Airtable forms automatically route requests to the appropriate approvers and log all requests, agents, and agent statuses. These statuses and any document links to measurement artifacts or more information about the agent are made available internally to all Urban staff, per the playbook’s transparency requirements.
 
-## Roles and Decision Rights
+When a builder submits an Airtable form, it usually goes to the accountable owner first to determine who else in the organization must review the agent. At Urban, that might include someone from the infrastructure and security team for a cybersecurity review and potentially the agent builder’s supervisor. In certain cases, it may be valuable to route the application to a member of the legal or compliance teams, if an organization has them, or the vice president of the builder’s team for ultimate sign-off.
 
-The governance approach uses seven core roles: the accountable owner, the evaluation lead, the security lead, the transparency lead, the responsible agentic AI lead, the contributor, and the independent reviewer (if needed). Some roles may be combined initially, but separation is the goal as we mature in this framework.
+Two common issues we’ve observed thus far are cybersecurity risks related to the lethal trifecta and requirements for tools to connect to existing operational systems. Both require review by relevant experts—cybersecurity experts, of course, but also key operational systems leaders and executive leadership—to ensure that permissions follow the connectors appropriately and that any that don’t follow the connectors come with appropriate executive oversight and approval.
 
-### RACI Summary (Who does what)
+The Airtable form is then designed to facilitate a back and forth with the user to request additional information, refine permissions, and ultimately either reject or approve the agent submitted. Once approved by all parties, the request is automatically routed to a member of Urban’s Help Desk team to assign the appropriate permissions in our approved software systems, notify all parties involved, and update the information in our central agent registry, also hosted on Airtable and posted on Urban’s intranet.
 
-Legend: R = Responsible (does the work); A = Accountable (final owner); C = Consulted; I = Informed; N/A = not applicable
-
-| **Activity** | **Accountable owner** | **Evaluation lead** | **Security lead** | **Transparency lead** | **Responsible agentic AI lead** | **Contributor** | **Independent reviewer** |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Own overall toolkit roadmap and priorities | A | C | C | C | C | I | N/A |
-| Submit change proposal | I | I | I | I | I | R | N/A |
-| Triage and classify changes | A | R | R | R | R | C | N/A |
-| Review/approve low-impact changes | A | R | R | R | R | C | C |
-| Review/approve high-impact changes | A | C | C | C | C | I | A |
-| Maintain rubrics and evaluation templates | C | A/R | C | C | C | C | N/A |
-| Maintain security test suite categories | C | C | A/R | C | C | C | N/A |
-| Maintain transparency/audit trail templates | C | C | C | A/R | C | C | N/A |
-| Maintain stakeholder feedback & harms monitoring | C | C | C | C | A/R | C | N/A |
-| Publish releases and release notes | A | R | R | A | R | I | N/A |
-
-# Change Types and Review Path
-
-Reviewing and implementing changes to the AI agent requires two additional roles: maintainers and a generative AI (gen AI) committee. All proposed updates are classified to ensure the review rigor matches risk:
-
-* **Type A—Minor edits/clarifications:** typos, wording clarifications, formatting adjustments. Approved by relevant maintainer(s) and the communications department (if necessary).
-* **Type B—Adding/adjusting tests and examples:** New evaluation scenarios, rubric examples, or minor scoring guidance changes with minimal impact on AI tool outputs. Approved by relevant maintainer(s) and the communications department (if necessary); spot-checked by another lead when feasible.
-* **Type C—Control or gate change:** Changes to required checks, required approvals, or required artifacts. Approved by maintainer and the communications department, reviewed by the gen AI committee, and signed off on by accountable owner.
-* **Type D—Major framework change:** Structural changes to the framework (new principles, new evidence tiering approach, major re-scoping, etc.). Approved by maintainer and the communications department, reviewed by the gen AI committee and an independent reviewer, signed off on by accountable owner. Consider a wider stakeholder comment period if necessary.
-
-## Standard Contribution Workflow
-
-1. **Submit**: Contributor or other member of the committee submits a change proposal using the template.
-2. **Triage**: Maintainers acknowledge and classify changes (type A–D), assign an owner, and set a target release.
-3. **Review**: Relevant leads review for correctness, scope, and alignment with evaluation/security/transparency/responsible agentic AI expectations.
-4. **Make necessary updates**: For type B–D changes, required tests and documentation updates are run or updated (e.g., evaluation rubrics, security test categories, release artifact template).
-5. **Decide**: For type A and B changes, the maintainer decides. For type C and D changes, the gen AI committee decides and documents the rationale; the accountable owner signs off on accepted risks/exceptions.
-6. **Merge and version**: Changes are merged into the authoritative repository or location, and the toolkit version is incremented.
-7. **Release artifact**: A release note or audit trail summary is produced for the change set and shared with toolkit users in some form.
-8. **Monitor and learn**: Maintainers and relevant leads collect feedback from pilots and projects, log issues, and incorporate this information into future releases.
-
-## Cadence and Operating Rhythm
-
-The recommended cadence balances speed and quality:
-
-* **Monthly to quarterly**: Maintainer triage + minor releases (type A/B).
-* **Quarterly**: Planned release with bundled improvements and any type C items requiring committee review.
-* **Annually (or at major release)**: Review of security test categories and governance effectiveness; refresh of templates and training as needed.
-
-*Required Artifacts*
-
-* Change proposal (problem statement, rationale, impact, mapped risks, and proposed edits)
-* Updates/updated rubric/test documentation (as applicable)
-* Decision record (who approved, when, and why; risks mitigated vs accepted)
-* Release artifact/audit trail summary for each toolkit version release
-
+This process both enshrines the playbook within an operational system and allows the ultimate accountable owner—in Urban’s case, the chief information officer and vice president of technology and data science—the flexibility to make judgment calls, request additional information, and assign additional approvals as necessary.
 # Glossary and Additional Resources
 
 This section helps you learn more about the components of effective agentic AI processes and procedures. The glossary defines the technical and procedural terms used throughout the playbook. The additional resources list Urban Institute products on AI available on [urban.org](https://www.urban.org/) or Github, along with the external websites and publications consulted while developing the playbook.
@@ -328,7 +327,7 @@ This section helps you learn more about the components of effective agentic AI p
 
 **Agentic generative AI:** An artificial intelligence system, preconfigured with instructions and relevant background information, that can autonomously interpret goals and constraints, plan or select steps, call tools or take actions in systems, and iterate based on user or retrieved input.
 
-**Bias gap:** The extent to which subgroup members report that an AI agent perpetuates any stereotypes or prejudices based on their identity—for example, whether users from one subgroup report that the agent’s language, tone, or assumptions feel more stigmatizing, judgmental, or stereotype-reinforcing than other users do.
+**Bias gap:** The extent to which subgroup members report that an AI agent perpetuates any stereotypes or prejudices based on their identity—for example, whether users from one subgroup report that the agent’s language, tone, or assumptions feel more stigmatizing, judgmental, or stereotype-reinforcing than other applicants do.
 
 **Builder:** An IT specialist who creates a new agentic generative AI tool or a new application of an existing tool to resolve a specific business or policy problem.
 
@@ -336,7 +335,6 @@ This section helps you learn more about the components of effective agentic AI p
 
 **Completeness:** How well an AI system’s response covers all necessary elements of the request—no key steps, constraints, or required details omitted.
 
-**Contributor:** Any staff member who proposes a change, submits a test scenario, improves documentation, or provides feedback on an AI tool.
 
 **Correctness:** Whether an AI system’s response is factually accurate, and how well it avoids introducing errors.
 
@@ -354,23 +352,20 @@ This section helps you learn more about the components of effective agentic AI p
 
 *Tier 4—Design evidence:* System owners have a documented and well-defined logic model or theory of action with clearly defined assumptions.
 
-**Explainability and clarity:** How well an AI agent provides evidence for its output that is clear, well-formatted, and actionable; accurately reflects the system’s process for generating the answer; and clearly communicates the agent’s knowledge limits.
+**Explainability and clarity:** How well an AI agent provides evidence for its output that is clear, well-formatted, and actionable; accurately reflects the system’s process for generating the answer; and clearly communicates the agent’s knowledge limits. For more complex agentic systems, this may include providing visibility into key tool calls, retrieved sources, workflow steps, and other important actions that contributed to the result.
 
-**Generative AI (Gen AI) committee:** A cross-functional forum that decides on high-impact changes to an agentic AI tool and resolves tradeoffs; it advises the accountable owner.
 
 **Governance:** The rules, roles, and decisionmaking processes that determine who can propose, review, approve, and publish changes to an AI agent or tool.
 
 **Groundedness:** How well an AI agent’s response is supported by the allowed sources or context, cites sources, and does not invent unsupported claims.
 
-**Independent reviewer:** A person who is neither a contributor nor part of the AI governance structure and is asked to assess high-impact updates to an AI agent (e.g., peer reviewer, auditor, or designated subject-matter expert).
 
 **Indirect injection:** Whether hidden instructions in sources can redirect an AI agent to perform malicious actions.
 
 **Knowledge-source poisoning:** Whether an agentic AI system treats external sources as untrusted input.
 
-**Maintainers:** A small group (typically the accountable owner, evaluation lead, responsible agentic AI lead, security lead, and transparency lead) that triages, reviews, and approves low- and medium-impact changes to an AI tool.
 
-**Non-experts:** Users who lack the subject matter expertise necessary to review and determine the correctness, reliability, groundedness, and completeness of a generative AI tool or application’s output.
+**Non-experts:** Users who lack the subject matter expertise necessary to review and determine the correctness, reliability, groundedness, and completeness of a generative AI tool or application’s output within the normal time constraints of their work.
 
 **Outcome gap:** The difference in AI-agent-driven-outcomes between subgroups—for example, whether people with disabilities are less likely to complete a benefit application process or receive benefits.
 
@@ -378,7 +373,7 @@ This section helps you learn more about the components of effective agentic AI p
 
 **Release artifact/audit trail:** A consistent, reviewable record of each update to an AI agent or system that summarizes what changed, what was tested, what passed/failed, and what risks were mitigated versus accepted.
 
-**Reliability under variation:** How consistently an AI agent performs across reasonable variations in phrasing, order, multi‑turn context, or scenario path.
+**Reliability under variation:** How consistently an AI agent performs across reasonable variations in phrasing, order, multi‑turn context, or scenario paths.
 
 **Responsible agentic AI lead:** The person working with members of the target population and ensuring both harms and opportunities are identified, measured, mitigated, and monitored; they own the stakeholder input and feedback mechanisms.
 
@@ -404,7 +399,7 @@ This playbook and other toolkits on responsible agentic AI are available [in our
 
 The Urban Institute’s work on and with AI is collected [here](https://www.urban.org/research-and-evidence/artificial-intelligence). Recent Urban resources are listed below.
 
-### Articles about building responsible AI
+### Blog articles about building responsible AI
 
 **[How We Built an AI Evaluation Framework with Experts in the Loop](https://www.urban.org/data%40urbans/how-we-built-ai-evaluation-framework-experts-loop%22%20%5Co%20%22headline)**
 
@@ -431,6 +426,12 @@ The Urban Institute’s work on and with AI is collected [here](https://www.urba
 **[How Can Local Governments Use AI to Answer Community Members’ Questions About Zoning and Land-Use Policies?](https://www.urban.org/urban-wire/how-can-local-governments-use-ai-answer-community-members-questions-about-zoning-and%22%20%5Co%20%22headline)**
 
 *Urban Wire,* March 19, 2026
+
+### Relevant research and resources that informed this publication
+
+Community-Engaged and Participatory Methods Toolkits, 2021–2026
+
+[Data Walks: An Innovative Way to Share Data with Communities](https://www.urban.org/research/publication/data-walks-innovative-way-share-data-communities), November 2015
 
 ## External resources
 
@@ -488,12 +489,14 @@ MIT’s [AI Risk Initiative](https://airisk.mit.edu/)
 
 # Acknowledgments
 
-This guide was supported by the Urban Institute. The views expressed are those of the author and should not be attributed to the Urban Institute, its trustees, or its funders. Funders do not determine research findings or the insights and recommendations of our experts. More information on our funding principles is available [here](https://www.urban.org/about/our-funding). Read our terms of service [here](https://www.urban.org/terms-service).
+This guide was supported by the Urban Institute. We are grateful to them and to all our funders, who make it possible for Urban to advance its mission. The views expressed are those of the authors and should not be attributed to the Urban Institute, its trustees, or its funders. Funders do not determine research findings or the insights and recommendations of our experts. More information on our funding principles is available [here](https://www.urban.org/about/our-funding). Read our terms of service [here](https://www.urban.org/terms-service).
 
-The author thanks Judah Axelrod, Sam Park, Jessica Kelly, Erika Tyagi, Kristen Brown, Lauren Farrell, Elsa Falkenburger, and Aaron Williams for their thoughtful feedback.
+The author thanks Judah Axelrod, Sam Park, Jessica Kelly, Erika Tyagi, Kristen Brown, Lauren Farrell, Elsa Falkenburger, Aaron Williams, and Alena Stern for their thoughtful feedback.
 
 AUTHOR Graham MacDonald
 
 EDITING Fiona Blackshaw, Alex Dallman
 
 PRODUCTION Sam Cressman, Lydia Nguyen
+
+Note: The update to this Markdown file was automatically generated by Microsoft Copilot based on the new version of the Playbook on Urban's website. Please refer to the website version if you note any discrepancies.
